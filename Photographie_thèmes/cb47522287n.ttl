@@ -1,0 +1,52 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/Elements/> .
+@prefix ns2: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns5: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns6: <http://purl.org/ontology/bibo/> .
+@prefix ns7: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns8: <http://id.loc.gov/vocabulary/relators/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb47522287n> a skos:Concept ;
+    dcterms:created "2024-07-23" ;
+    dcterms:modified "2024-07-23" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb47522287n#about> .
+
+<http://data.bnf.fr/ark:/12148/cb47522287n#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns2:FRBNF 47522287 ;
+    ns2:firstYear 2024 ;
+    ns2:isbn "978-2-38036-162-9" ;
+    dcterms:date "2024" ;
+    dcterms:description "1 pochette (12 cartes, 1 livret (4 p.)) : Ill. en coul. ; 15 x 10,7 cm" ;
+    dcterms:publisher "Paris : Reliefs Éditions , 2024" ;
+    dcterms:title "Petits métiers de Paris : livre d'images, [Album ou portfolio de reproductions]" ;
+    ns6:isbn13 "978-2-38036-162-9" ;
+    ns3:P30011 <http://data.bnf.fr/date/2024/> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb47522287n#Expression> ;
+    ns3:P30176 "Reliefs Éditions" ;
+    ns3:P30279 "Paris (France)" ;
+    ns4:P60470 "Technique de l'image : impression photomécanique. Note : Livre d'images" ;
+    ns1:dateOfPublicationManifestation <http://data.bnf.fr/date/2024/> ;
+    ns1:note "Technique de l'image : impression photomécanique. Note : Livre d'images" ;
+    ns1:placeOfPublication "Paris" ;
+    ns1:publishersName "Reliefs Éditions" ;
+    ns5:expressionManifested <http://data.bnf.fr/ark:/12148/cb47522287n#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb47522287n> .
+
+<http://data.bnf.fr/ark:/12148/cb47522287n#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns7:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns8:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb47522287n#frbr:Expression> .
+

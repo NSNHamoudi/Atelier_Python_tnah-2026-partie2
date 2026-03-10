@@ -1,0 +1,45 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns2: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns3: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns4: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns5: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb43583539j> a skos:Concept ;
+    dcterms:created "2013-05-03" ;
+    dcterms:modified "2013-07-31" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb43583539j#about> .
+
+<http://data.bnf.fr/ark:/12148/cb43583539j#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns5:FRBNF 43583539 ;
+    dcterms:date "1898/1924" ;
+    dcterms:description "229 photogr. pos. : formats divers" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11945612j>,
+        <http://data.bnf.fr/ark:/12148/cb119555594> ;
+    dcterms:title "[Recueil. Photographies positives. Oeuvre d'Eugène Atget. Paris. 5e arrondissement et 6e arrondissement. Boîte fol B]" ;
+    ns4:P30139 <http://data.bnf.fr/ark:/12148/cb43583539j#Expression> ;
+    ns4:P30279 "France" ;
+    ns1:expressionManifested <http://data.bnf.fr/ark:/12148/cb43583539j#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb43583539j> .
+
+<http://data.bnf.fr/ark:/12148/cb11945612j> skos:prefLabel "Paris (France) -- Arrondissement (05e)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119555594> skos:prefLabel "Paris (France) -- Arrondissement (06e)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb43583539j#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns2:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns3:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11945612j>,
+        <http://data.bnf.fr/ark:/12148/cb119555594> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb43583539j#frbr:Expression> .
+

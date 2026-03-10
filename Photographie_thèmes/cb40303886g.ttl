@@ -1,0 +1,63 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/Elements/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40303886g> a skos:Concept ;
+    dcterms:created "1997-11-24" ;
+    dcterms:modified "2013-10-18" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40303886g#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40303886g#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40303886 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11933566h>,
+        <http://data.bnf.fr/ark:/12148/cb11978095r>,
+        <http://data.bnf.fr/ark:/12148/cb15096176p> ;
+    dcterms:title "[Rouen] : [Maison et étal de marchand de légumes], [photographie]" ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb40303886g#Expression> ;
+    ns2:P30279 "France" ;
+    ns5:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns1:note "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb40303886g#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40303886g> .
+
+<http://data.bnf.fr/ark:/12148/cb11933566h> skos:prefLabel "Rouen (Seine-Maritime, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11978095r> skos:altLabel "Marchandises -- Étalage"@fr,
+        "Montre (commerce)"@fr,
+        "Produits commerciaux -- Étalage"@fr ;
+    skos:prefLabel "Étalage"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15096176p> skos:altLabel "Marchands de fruits et légumes"@fr ;
+    skos:prefLabel "Marchands de primeurs"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40303886g#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns3:r9990 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11933566h>,
+        <http://data.bnf.fr/ark:/12148/cb11978095r>,
+        <http://data.bnf.fr/ark:/12148/cb15096176p> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40303886g#frbr:Expression> .
+

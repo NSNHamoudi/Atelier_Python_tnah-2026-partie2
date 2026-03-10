@@ -1,0 +1,66 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns2: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns5: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40303883f> a skos:Concept ;
+    dcterms:created "1997-11-24" ;
+    dcterms:modified "2022-12-12" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40303883f#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40303883f#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns1:FRBNF 40303883 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119333152>,
+        <http://data.bnf.fr/ark:/12148/cb11975998j>,
+        <http://data.bnf.fr/ark:/12148/cb14339569c#about>,
+        <http://data.bnf.fr/ark:/12148/cb14871360g#about> ;
+    dcterms:title "[Square Monge] : [statues de Jean Aubry et de Viole], [photographie]" ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb40303883f#Expression> ;
+    ns3:P30279 "France" ;
+    ns5:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns7:note "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb40303883f#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40303883f> .
+
+<http://data.bnf.fr/ark:/12148/cb11932931q> skos:prefLabel "Paris (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119333152> skos:altLabel "Art statuaire"@fr,
+        "Statuaires"@fr ;
+    skos:prefLabel "Statues"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11975998j> skos:altLabel "17e siècle (subdivision)"@fr,
+        "Dix-septième siècle (subdivision)"@fr,
+        "XVIIe siècle (subdivision)"@fr ;
+    skos:prefLabel "17e siècle"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40303883f#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns4:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns4:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:r9990 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns2:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119333152>,
+        <http://data.bnf.fr/ark:/12148/cb11975998j> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40303883f#frbr:Expression> .
+

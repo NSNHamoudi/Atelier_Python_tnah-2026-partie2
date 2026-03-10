@@ -1,0 +1,93 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns6: <http://rdvocab.info/Elements/> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290806z> a skos:Concept ;
+    dcterms:created "1996-03-26" ;
+    dcterms:modified "2022-12-13" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290806z#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290806z#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40290806 ;
+    dcterms:date "1903/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 16,9 x 21,3 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119333152>,
+        <http://data.bnf.fr/ark:/12148/cb11933675r>,
+        <http://data.bnf.fr/ark:/12148/cb11954414n>,
+        <http://data.bnf.fr/ark:/12148/cb11964877v>,
+        <http://data.bnf.fr/ark:/12148/cb11975999w>,
+        <http://data.bnf.fr/ark:/12148/cb11989609f>,
+        <http://data.bnf.fr/ark:/12148/cb125165083>,
+        <http://data.bnf.fr/ark:/12148/cb14868837t#about> ;
+    dcterms:title "Jardin des Tuileries : Lion et Crocodile [i.e. \"Tigre terrassant un crocodile\"] par Cain, [photographie]" ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10516621z> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40290806z#Expression> ;
+    ns1:P30279 "France" ;
+    ns5:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à g." ;
+    ns6:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à g." ;
+    ns2:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10516621z> ;
+    ns2:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290806z#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290806z> .
+
+<http://data.bnf.fr/ark:/12148/cb11932931q> skos:prefLabel "Paris (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119333152> skos:altLabel "Art statuaire"@fr,
+        "Statuaires"@fr ;
+    skos:prefLabel "Statues"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11933675r> skos:altLabel "Felis tigris"@fr,
+        "Leo tigris"@fr,
+        "Panthera tigris"@fr ;
+    skos:prefLabel "Tigre"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11954414n> skos:prefLabel "Paris (France) -- Jardin des Tuileries"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11964877v> skos:altLabel "Coccodrilli"@it ;
+    skos:prefLabel "Crocodiles"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11975999w> skos:altLabel "19e siècle (subdivision)"@fr,
+        "Dix-neuvième siècle (subdivision)"@fr,
+        "XIXe siècle (subdivision)"@fr ;
+    skos:prefLabel "19e siècle"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11989609f> skos:altLabel "Dans la peinture"@fr,
+        "Dans la sculpture"@fr,
+        "Dans les arts graphiques"@fr,
+        "Représentation dans l'art"@fr,
+        "Représentation iconographique"@fr ;
+    skos:prefLabel "Dans l'art"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb125165083> skos:altLabel "Animaux, Combats d'"@fr,
+        "Combats publics d'animaux"@fr ;
+    skos:prefLabel "Combats d'animaux"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290806z#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119333152>,
+        <http://data.bnf.fr/ark:/12148/cb11933675r>,
+        <http://data.bnf.fr/ark:/12148/cb11954414n>,
+        <http://data.bnf.fr/ark:/12148/cb11964877v>,
+        <http://data.bnf.fr/ark:/12148/cb11975999w>,
+        <http://data.bnf.fr/ark:/12148/cb11989609f>,
+        <http://data.bnf.fr/ark:/12148/cb125165083> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290806z#frbr:Expression> .
+

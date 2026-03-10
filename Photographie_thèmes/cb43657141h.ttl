@@ -1,0 +1,83 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns2: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns5: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns6: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb43657141h> a skos:Concept ;
+    dcterms:created "2013-08-24" ;
+    dcterms:modified "2013-10-18" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb43657141h#about> .
+
+<http://data.bnf.fr/ark:/12148/cb43657141h#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns2:FRBNF 43657141 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932251d>,
+        <http://data.bnf.fr/ark:/12148/cb119666188>,
+        <http://data.bnf.fr/ark:/12148/cb119730183>,
+        <http://data.bnf.fr/ark:/12148/cb11989609f>,
+        <http://data.bnf.fr/ark:/12148/cb131820168> ;
+    dcterms:title "[45 rue Lappe] : [cabaret à l'enseigne du Lion d'Or], [photographie]" ;
+    ns5:P30139 <http://data.bnf.fr/ark:/12148/cb43657141h#Expression> ;
+    ns5:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns7:note "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns4:expressionManifested <http://data.bnf.fr/ark:/12148/cb43657141h#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb43657141h> .
+
+<http://data.bnf.fr/ark:/12148/cb11932251d> skos:altLabel "Felis leo"@fr,
+        "Leo leo"@fr,
+        "Lion d'Afrique"@fr,
+        "Panthera leo"@fr ;
+    skos:prefLabel "Lion"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119666188> skos:altLabel "Grillages (architecture)"@fr,
+        "Grilles (architecture)"@fr ;
+    skos:prefLabel "Grilles"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119730183> skos:altLabel "Enseignes commerciales"@fr,
+        "Signes et indications"@fr ;
+    skos:prefLabel "Enseignes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11989609f> skos:altLabel "Dans la peinture"@fr,
+        "Dans la sculpture"@fr,
+        "Dans les arts graphiques"@fr,
+        "Représentation dans l'art"@fr,
+        "Représentation iconographique"@fr ;
+    skos:prefLabel "Dans l'art"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb131820168> skos:altLabel "Lappe, Rue de (Paris, France)"@fr,
+        "Rue de Lappe (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue de Lappe"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb43657141h#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns1:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns1:r4030 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns1:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns6:col <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns6:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932251d>,
+        <http://data.bnf.fr/ark:/12148/cb119666188>,
+        <http://data.bnf.fr/ark:/12148/cb119730183>,
+        <http://data.bnf.fr/ark:/12148/cb11989609f>,
+        <http://data.bnf.fr/ark:/12148/cb131820168> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb43657141h#frbr:Expression> .
+

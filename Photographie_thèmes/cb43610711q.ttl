@@ -1,0 +1,123 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns3: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb43610711q> a skos:Concept ;
+    dcterms:created "2013-06-11" ;
+    dcterms:modified "2013-06-14" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb43610711q#about> .
+
+<http://data.bnf.fr/ark:/12148/cb43610711q#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns3:FRBNF 43610711 ;
+    dcterms:date "1901/1925" ;
+    dcterms:description "204 photogr. pos. : formats divers" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11933392h>,
+        <http://data.bnf.fr/ark:/12148/cb119334171>,
+        <http://data.bnf.fr/ark:/12148/cb11933963k>,
+        <http://data.bnf.fr/ark:/12148/cb119342558>,
+        <http://data.bnf.fr/ark:/12148/cb11936957c>,
+        <http://data.bnf.fr/ark:/12148/cb119418097>,
+        <http://data.bnf.fr/ark:/12148/cb11948604n>,
+        <http://data.bnf.fr/ark:/12148/cb119487267>,
+        <http://data.bnf.fr/ark:/12148/cb11963830z>,
+        <http://data.bnf.fr/ark:/12148/cb11963911z>,
+        <http://data.bnf.fr/ark:/12148/cb119680706>,
+        <http://data.bnf.fr/ark:/12148/cb11999979n>,
+        <http://data.bnf.fr/ark:/12148/cb119999816>,
+        <http://data.bnf.fr/ark:/12148/cb12063500s>,
+        <http://data.bnf.fr/ark:/12148/cb12126355k>,
+        <http://data.bnf.fr/ark:/12148/cb12157533p>,
+        <http://data.bnf.fr/ark:/12148/cb12168817q>,
+        <http://data.bnf.fr/ark:/12148/cb14540545r>,
+        <http://data.bnf.fr/ark:/12148/cb145736472>,
+        <http://data.bnf.fr/ark:/12148/cb16689705h> ;
+    dcterms:title "[Recueil. Photographies positives. Oeuvre d'Eugène Atget. Département de l'Essonne et département des Yvelines. Boîte fol B]" ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb43610711q#Expression> ;
+    ns1:P30279 "France" ;
+    ns2:expressionManifested <http://data.bnf.fr/ark:/12148/cb43610711q#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb43610711q> .
+
+<http://data.bnf.fr/ark:/12148/cb11933392h> skos:prefLabel "Bougival (Yvelines, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119334171> skos:prefLabel "Carrières-sur-Seine (Yvelines, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11933963k> skos:altLabel "Essonne"@fr,
+        "Essonne (France. - département)"@fr ;
+    skos:prefLabel "Essonne (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119342558> skos:prefLabel "Jouy-en-Josas (Yvelines, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11936957c> skos:prefLabel "Palaiseau (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119418097> skos:altLabel "Yvelines"@fr ;
+    skos:prefLabel "Yvelines (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11948604n> skos:prefLabel "Longjumeau (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119487267> skos:altLabel "Château de Versailles (Versailles, Yvelines, France)"@fr ;
+    skos:prefLabel "Versailles (Yvelines, France) -- Château"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11963830z> skos:prefLabel "Marly-le-Roi (Yvelines, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11963911z> skos:prefLabel "Montlhéry (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119680706> skos:prefLabel "Gif-sur-Yvette (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11999979n> skos:prefLabel "Massy (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119999816> skos:prefLabel "Igny (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12063500s> skos:prefLabel "Le Port-Marly (Yvelines, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12126355k> skos:prefLabel "Saulx-les-Chartreux (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12157533p> skos:prefLabel "Longpont-sur-Orge (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12168817q> skos:prefLabel "Juvisy-sur-Orge (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb14540545r> skos:prefLabel "Wissous (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb145736472> skos:altLabel "Mantes-Gassicourt (Yvelines, France)"@fr,
+        "Mantes-la-Jolie (Yvelines, France) -- Village de Gassicourt"@fr ;
+    skos:prefLabel "Gassicourt (Yvelines, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb16689705h> skos:prefLabel "Linas (Essonne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb43610711q#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns5:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11933392h>,
+        <http://data.bnf.fr/ark:/12148/cb119334171>,
+        <http://data.bnf.fr/ark:/12148/cb11933963k>,
+        <http://data.bnf.fr/ark:/12148/cb119342558>,
+        <http://data.bnf.fr/ark:/12148/cb11936957c>,
+        <http://data.bnf.fr/ark:/12148/cb119418097>,
+        <http://data.bnf.fr/ark:/12148/cb11948604n>,
+        <http://data.bnf.fr/ark:/12148/cb119487267>,
+        <http://data.bnf.fr/ark:/12148/cb11963830z>,
+        <http://data.bnf.fr/ark:/12148/cb11963911z>,
+        <http://data.bnf.fr/ark:/12148/cb119680706>,
+        <http://data.bnf.fr/ark:/12148/cb11999979n>,
+        <http://data.bnf.fr/ark:/12148/cb119999816>,
+        <http://data.bnf.fr/ark:/12148/cb12063500s>,
+        <http://data.bnf.fr/ark:/12148/cb12126355k>,
+        <http://data.bnf.fr/ark:/12148/cb12157533p>,
+        <http://data.bnf.fr/ark:/12148/cb12168817q>,
+        <http://data.bnf.fr/ark:/12148/cb14540545r>,
+        <http://data.bnf.fr/ark:/12148/cb145736472>,
+        <http://data.bnf.fr/ark:/12148/cb16689705h> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb43610711q#frbr:Expression> .
+

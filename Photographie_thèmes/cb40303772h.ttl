@@ -1,0 +1,63 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns6: <http://rdvocab.info/Elements/> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40303772h> a skos:Concept ;
+    dcterms:created "1997-11-18" ;
+    dcterms:modified "2013-10-18" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40303772h#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40303772h#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40303772 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb12491842c>,
+        <http://data.bnf.fr/ark:/12148/cb15099098f>,
+        <http://data.bnf.fr/ark:/12148/cb162414057> ;
+    dcterms:title "[Rue Saint-Julien-le-Pauvre] : [photographie]" ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb40303772h#Expression> ;
+    ns2:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns6:note "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns4:expressionManifested <http://data.bnf.fr/ark:/12148/cb40303772h#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40303772h> .
+
+<http://data.bnf.fr/ark:/12148/cb12491842c> skos:altLabel "Charrettes à bras"@fr,
+        "Charrettes à traction humaine"@fr,
+        "Veicoli a braccia"@it ;
+    skos:prefLabel "Voitures à bras"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15099098f> skos:prefLabel "Parasols"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb162414057> skos:altLabel "Rue Saint-Julien-le-Pauvre (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue Saint-Julien-le-Pauvre"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40303772h#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns1:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns1:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns1:r9990 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb12491842c>,
+        <http://data.bnf.fr/ark:/12148/cb15099098f>,
+        <http://data.bnf.fr/ark:/12148/cb162414057> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40303772h#frbr:Expression> .
+

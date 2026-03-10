@@ -1,0 +1,54 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns5: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb43657144j> a skos:Concept ;
+    dcterms:created "2013-08-24" ;
+    dcterms:modified "2013-10-18" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb43657144j#about> .
+
+<http://data.bnf.fr/ark:/12148/cb43657144j#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns5:FRBNF 43657144 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb16698156q> ;
+    dcterms:title "[Hôtel d'Argouges, 16 rue Séguier] : [photographie]" ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb43657144j#Expression> ;
+    ns2:P30279 "France" ;
+    ns4:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns7:note "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb43657144j#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb43657144j> .
+
+<http://data.bnf.fr/ark:/12148/cb16698156q> skos:altLabel "Rue Séguier (Paris, France)"@fr,
+        "Séguier, Rue (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue Séguier"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb43657144j#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns3:r4030 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns1:col <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns1:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb16698156q> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb43657144j#frbr:Expression> .
+

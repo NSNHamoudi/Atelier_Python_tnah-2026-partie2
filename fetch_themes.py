@@ -20,6 +20,8 @@ from rdflib.namespace import DCTERMS
 from rdflib import RDF, SKOS, Graph, Node, URIRef
 from utils import save_graph_html
 
+# Essaye de toujours utiliser des bibliothèques standard et pratique. Pathlib est un bon exemple de bibliothèque très utile et standard.
+
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # --- B. CONFIGURATION GLOBALE
 # ----------------------------------------------------------------------------------------------------------------------------------------
@@ -31,6 +33,7 @@ DATA_BNF_ENDPOINT = "https://data.bnf.fr/sparql"
 # --- C. FONCTIONS PRINCIPALES
 # ----------------------------------------------------------------------------------------------------------------------------------------
 
+# Pour les fonctions, garder l'idée suivante : une fonction = un but. Rester simple ! 
 
 def setup_bnf_sparql_wrapper() -> SPARQLWrapper:
     """
@@ -41,7 +44,7 @@ def setup_bnf_sparql_wrapper() -> SPARQLWrapper:
     """
     endpoint = SPARQLWrapper(DATA_BNF_ENDPOINT)
     endpoint.setTimeout(60)
-    return endpoint
+    return endpoint # c'est un objet de type SPARQLWrapper qui est retourné.
 
 
 def import_turtle_file(turtle_file: Path) -> Graph:
@@ -56,7 +59,7 @@ def import_turtle_file(turtle_file: Path) -> Graph:
     """
     g = Graph()
     g.parse(turtle_file, format="turtle")
-    return g
+    return g #ressort g qui est un objet de type graph représentant ici les photos.
 
 
 def identify_photo_resource(graph: Graph) -> Node:
@@ -73,7 +76,7 @@ def identify_photo_resource(graph: Graph) -> Node:
     )
     if not photo_uri:
         raise ValueError("Aucune ressource de type RDA:manifestation dans le graphe.")
-    return photo_uri
+    return photo_uri #Retourne un objet noeud qui représente la ressource, la manifestation identifiée par son URI. 
 
 
 def get_rameau_themes(graph: Graph) -> list[Node]:
@@ -214,3 +217,93 @@ def export_graph_to_html(graph: Graph, output_file: Path) -> None:
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # --- D. POINT D'ENTRÉE DU SCRIPT
 # ----------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+Construction de l'algorithme général qui va orchestrer les différentes fonctions.
+"""
+
+
+if __name__ == "__main__": #permet d'exécuter cela comme module. Permet de faire du routage et de faire de ce fichier un module finalement. 
+    """
+    POINT D'ENTRÉE DU SCRIPT
+    Ce bloc orchestre l'enrichissement des données : il lit les fichiers locaux,
+    va chercher les informations manquantes à la BnF, et fusionne le tout.
+    """
+
+    # --- ÉTAPE 1 : RÉGLAGES ET CHEMINS (CONFIGURATION)
+    base_dir = Path(__file__).parent
+    input_dir = base_dir / "photographies"
+    output_dir = base_dir / "photographies_avec_themes"
+
+    # Sécurité : limiter le nombre de requêtes pour les tests (None pour tout traiter)
+    graph_processing_limit = 1
+
+    # --- ÉTAPE 2 : PRÉPARATION DES OUTILS (INITIALISATION)
+
+    # On s'assure que le dossier de sortie existe pour ne pas faire planter le script
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Connexion au point d'accès SPARQL de la BnF
+    databnf = setup_bnf_sparql_wrapper()
+
+    # On récupère la liste de tous les fichiers .ttl à traiter
+    turtle_files = list(input_dir.glob("*.ttl"))
+
+    # Application de la limite si elle est définie
+    if graph_processing_limit:
+        turtle_files = turtle_files[:graph_processing_limit]
+
+    print(f"{len(turtle_files)} fichiers Turtle à traiter dans {input_dir}.")
+
+    # --- ÉTAPE 3 : BOUCLE PRINCIPALE DE TRAITEMENT
+
+    for turtle_photo_file in turtle_files:
+
+        print(f"Début de l'enrichissement pour : {turtle_photo_file.name}")
+
+        try:
+            # --- ÉTAPE 3 : BOUCLE PRINCIPALE DE TRAITEMENT
+
+            for turtle_photo_file in turtle_files:
+
+                print(f"Début de l'enrichissement pour : {turtle_photo_file.name}")
+
+                try:
+                    # 1. IMPORT : On transforme le fichier texte en un graphe RDF manipulable
+                    photo_graph = import_turtle_file(turtle_photo_file)
+
+                    # 2. IDENTIFICATION : On trouve les ressources du graphe qui
+                    # correspondent aux thèmes Rameau associés à la photo
+                    rameau_themes = get_rameau_themes(photo_graph)
+
+                    # 3. RÉCUPÉRATION : On demande à la BnF les labels textuels de ces thèmes Rameau.
+                    rameau_labels_graph = fetch_themes_labels(rameau_themes, databnf)
+
+                    # 4. FUSION : On injecte les labels récupérés dans le graphe de la photo.
+                    enriched_photo_graph = merge_labels_into_photo_graph(
+                    photo_graph, rameau_labels_graph
+                    )
+
+                    # 5. CONTRÔLE : On affiche un résumé textuel dans la console
+                    report = build_summary_report(enriched_photo_graph)
+                    print(report)
+
+                    # 6. EXPORT : On sauvegarde le résultat final sur le disque
+                    enriched_photo_file = output_dir / turtle_photo_file.name
+                    export_to_turtle(enriched_photo_graph, enriched_photo_file)
+
+                    # Bonus : on exporte aussi une version HTML du graphe enrichi
+                    # pour pouvoir le visualiser facilement dans un navigateur
+                    export_graph_to_html(
+                    enriched_photo_graph, enriched_photo_file.with_suffix(".html")
+                    )
+
+                    print(f"Réussite : {turtle_photo_file.name} enrichi.")
+
+                except Exception as e:
+                    print(f"Échec pour {turtle_photo_file.name} : {e}")
+
+                    print(f"Réussite : {turtle_photo_file.name} enrichi.")
+
+        except Exception as e:
+            print(f"Échec pour {turtle_photo_file.name} : {e}")

@@ -1,0 +1,99 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns6: <http://rdvocab.info/Elements/> .
+@prefix ns7: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb402917972> a skos:Concept ;
+    dcterms:created "1996-05-15" ;
+    dcterms:modified "2019-10-09" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb402917972#about> .
+
+<http://data.bnf.fr/ark:/12148/cb402917972#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns4:FRBNF 40291797 ;
+    dcterms:date "1899/1900" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 21,5 x 16,9 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119409485>,
+        <http://data.bnf.fr/ark:/12148/cb119540465>,
+        <http://data.bnf.fr/ark:/12148/cb119541004>,
+        <http://data.bnf.fr/ark:/12148/cb119563334>,
+        <http://data.bnf.fr/ark:/12148/cb11982525q>,
+        <http://data.bnf.fr/ark:/12148/cb15093219d> ;
+    dcterms:title "Coin de St Séverin - Rue St Jacques - va disparaître - Hiver 1899-1900 : juillet 1899, [photographie]" ;
+    dcterms:type <http://data.bnf.fr/ark:/12148/cb119409485> ;
+    ns2:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10518936f> ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb402917972#Expression> ;
+    ns2:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns6:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns1:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10518936f> ;
+    ns1:expressionManifested <http://data.bnf.fr/ark:/12148/cb402917972#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb402917972> .
+
+<http://data.bnf.fr/ark:/12148/cb119540465> skos:altLabel "Arbres dans les villes"@fr,
+        "Arbres en ville"@fr,
+        "Arbres urbains"@fr,
+        "Boisés urbains"@fr,
+        "Villes -- Arbres"@fr ;
+    skos:prefLabel "Arbres des villes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119541004> skos:altLabel "Bornes-fontaines"@fr,
+        "Fontaines de bassins"@fr,
+        "Fontaines de jardins"@fr,
+        "Fontaines publiques"@fr,
+        "Vasques"@fr ;
+    skos:prefLabel "Fontaines"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119563334> skos:prefLabel "Paris (France) -- Rue Saint-Jacques"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11982525q> skos:altLabel "Chalets d'aisances"@fr,
+        "Chalets de nécessité"@fr,
+        "Colonnes Rambuteau"@fr,
+        "Colonnes vespasiennes"@fr,
+        "Latrines publiques"@fr,
+        "Lieux d'aisance"@fr,
+        "Pissotières"@fr,
+        "Sanisettes"@fr,
+        "Sanitaires publics"@fr,
+        "Urinoirs publics"@fr,
+        "Vespasiennes"@fr,
+        "WC publics"@fr ;
+    skos:prefLabel "Toilettes publiques"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15093219d> skos:altLabel "Bornes-affiches"@fr,
+        "Colonnes d'affichage"@fr,
+        "Colonnes-affiches"@fr,
+        "Morris, Colonnes"@fr ;
+    skos:prefLabel "Colonnes Morris"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb402917972#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns7:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119540465>,
+        <http://data.bnf.fr/ark:/12148/cb119541004>,
+        <http://data.bnf.fr/ark:/12148/cb119563334>,
+        <http://data.bnf.fr/ark:/12148/cb11982525q>,
+        <http://data.bnf.fr/ark:/12148/cb15093219d> ;
+    dcterms:type <http://data.bnf.fr/ark:/12148/cb119409485>,
+        dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb402917972#frbr:Expression> .
+
+<http://data.bnf.fr/ark:/12148/cb119409485> skos:altLabel "Affiches de publicité"@fr,
+        "Affiches publicitaires"@fr,
+        "Placards"@fr,
+        "Posters"@fr ;
+    skos:prefLabel "Affiches"@fr .
+

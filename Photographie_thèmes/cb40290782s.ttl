@@ -1,0 +1,74 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://rdvocab.info/Elements/> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns6: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290782s> a skos:Concept ;
+    dcterms:created "1996-03-25" ;
+    dcterms:modified "2022-12-13" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290782s#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290782s#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40290782 ;
+    dcterms:date "1907/1922" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 16,7 x 21,3 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119333152>,
+        <http://data.bnf.fr/ark:/12148/cb11954414n>,
+        <http://data.bnf.fr/ark:/12148/cb11962433n>,
+        <http://data.bnf.fr/ark:/12148/cb11975999w>,
+        <http://data.bnf.fr/ark:/12148/cb148689671#about> ;
+    dcterms:title "Jardin des Tuileries : [\"Le Réveil\" de N. Meyer], [photographie]" ;
+    ns2:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10516587r>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b105165886> ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb40290782s#Expression> ;
+    ns2:P30279 "France" ;
+    ns6:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (1)-BOITE FOL B, exemplaire n° 1. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à g." ;
+    ns3:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (1)-BOITE FOL B, exemplaire n° 1. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à g." ;
+    ns1:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10516587r>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b105165886> ;
+    ns1:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290782s#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290782s> .
+
+<http://data.bnf.fr/ark:/12148/cb11932931q> skos:prefLabel "Paris (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119333152> skos:altLabel "Art statuaire"@fr,
+        "Statuaires"@fr ;
+    skos:prefLabel "Statues"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11954414n> skos:prefLabel "Paris (France) -- Jardin des Tuileries"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11962433n> skos:altLabel "Arc de triomphe du Carrousel (Paris, France)"@fr,
+        "Carrousel, Arc de triomphe du (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Arc de triomphe du Carrousel"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11975999w> skos:altLabel "19e siècle (subdivision)"@fr,
+        "Dix-neuvième siècle (subdivision)"@fr,
+        "XIXe siècle (subdivision)"@fr ;
+    skos:prefLabel "19e siècle"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290782s#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns5:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119333152>,
+        <http://data.bnf.fr/ark:/12148/cb11954414n>,
+        <http://data.bnf.fr/ark:/12148/cb11962433n>,
+        <http://data.bnf.fr/ark:/12148/cb11975999w> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290782s#frbr:Expression> .
+

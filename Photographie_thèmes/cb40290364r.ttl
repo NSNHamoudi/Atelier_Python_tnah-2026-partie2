@@ -1,0 +1,57 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://rdvocab.info/Elements/> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns5: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns6: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns7: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290364r> a skos:Concept ;
+    dcterms:created "1996-02-26" ;
+    dcterms:modified "2013-08-19" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290364r#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290364r#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns5:FRBNF 40290364 ;
+    dcterms:date "1899/1900" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 16,5 x 21,6 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb12491842c>,
+        <http://data.bnf.fr/ark:/12148/cb16698181x> ;
+    dcterms:title "Hôtel de la Duchesse de Savoie : Rue Garancière 8 - Octobre 1899, [photographie]" ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10519523h> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40290364r#Expression> ;
+    ns1:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Num. de nég. coupé dans l'épr. en b. à dr." ;
+    ns2:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Num. de nég. coupé dans l'épr. en b. à dr." ;
+    ns4:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10519523h> ;
+    ns4:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290364r#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290364r> .
+
+<http://data.bnf.fr/ark:/12148/cb12491842c> skos:altLabel "Charrettes à bras"@fr,
+        "Charrettes à traction humaine"@fr,
+        "Veicoli a braccia"@it ;
+    skos:prefLabel "Voitures à bras"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb16698181x> skos:altLabel "Garancière, Rue (Paris, France)"@fr,
+        "Rue Garancière (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue Garancière"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290364r#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns7:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns6:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb12491842c>,
+        <http://data.bnf.fr/ark:/12148/cb16698181x> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290364r#frbr:Expression> .
+

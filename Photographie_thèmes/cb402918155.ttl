@@ -1,0 +1,56 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/Elements/> .
+@prefix ns2: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns6: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb402918155> a skos:Concept ;
+    dcterms:created "1996-05-15" ;
+    dcterms:modified "2013-08-22" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb402918155#about> .
+
+<http://data.bnf.fr/ark:/12148/cb402918155#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40291815 ;
+    dcterms:date "1902/1903" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 17,2 x 21 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb15077147x>,
+        <http://data.bnf.fr/ark:/12148/cb162414711> ;
+    dcterms:title "Annexe de l'Hôtel Dieu, Cour St-Julien-le-Pauvre : R. de la Bûcherie, [photographie]" ;
+    ns3:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10518968k> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb402918155#Expression> ;
+    ns3:P30279 "France" ;
+    ns2:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B" ;
+    ns1:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B" ;
+    ns5:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10518968k> ;
+    ns5:expressionManifested <http://data.bnf.fr/ark:/12148/cb402918155#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb402918155> .
+
+<http://data.bnf.fr/ark:/12148/cb15077147x> skos:altLabel "Escaliers de pierre"@fr,
+        "Pierre, Escaliers en"@fr ;
+    skos:prefLabel "Escaliers en pierre"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb162414711> skos:altLabel "Bûcherie, Rue de la (Paris, France)"@fr,
+        "Rue de la Bûcherie (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue de la Bûcherie"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb402918155#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns6:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb15077147x>,
+        <http://data.bnf.fr/ark:/12148/cb162414711> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb402918155#frbr:Expression> .
+

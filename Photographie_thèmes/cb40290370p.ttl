@@ -1,0 +1,65 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns2: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns5: <http://rdvocab.info/Elements/> .
+@prefix ns6: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290370p> a skos:Concept ;
+    dcterms:created "1996-02-26" ;
+    dcterms:modified "2013-08-19" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290370p#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290370p#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40290370 ;
+    dcterms:date "1900/1901" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 21,1 x 16,6 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11973081v>,
+        <http://data.bnf.fr/ark:/12148/cb15720521t> ;
+    dcterms:title "Hôtel du Prince du Condé - 4 Rue Monsieur le Prince : [photographie]" ;
+    ns3:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b105194931> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb40290370p#Expression> ;
+    ns3:P30279 "France" ;
+    ns6:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'apr. : Szarkowski, John. The Work of Atget. New-York, 19814-1985, t.3" ;
+    ns5:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'apr. : Szarkowski, John. The Work of Atget. New-York, 19814-1985, t.3" ;
+    ns2:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b105194931> ;
+    ns2:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290370p#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290370p> .
+
+<http://data.bnf.fr/ark:/12148/cb11973081v> skos:altLabel "Lambrissage"@fr,
+        "Panneautage mural"@fr,
+        "Panneaux menuisés"@fr ;
+    skos:prefLabel "Panneautage (menuiserie)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15720521t> skos:altLabel "Chemin allant à la porte Saint-Michel (Paris, France)"@fr,
+        "Dessus-les-Fossés, Chemin du (Paris, France)"@fr,
+        "Fossés-Monsieur-le-Prince, Rue des (Paris, France)"@fr,
+        "Fossés-Saint-Germain, Rue des (Paris, France)"@fr,
+        "Monsieur-le-Prince, Rue (Paris, France)"@fr,
+        "Paris (France) -- Chemin allant à la porte Saint-Michel"@fr,
+        "Paris (France) -- Chemin du Dessus-les-Fossés"@fr,
+        "Paris (France) -- Rue des Fossés-Monsieur-le-Prince"@fr,
+        "Paris (France) -- Rue des Fossés-Saint-Germain"@fr,
+        "Rue Monsieur-le-Prince (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue Monsieur-le-Prince"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290370p#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns4:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns1:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11973081v>,
+        <http://data.bnf.fr/ark:/12148/cb15720521t> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290370p#frbr:Expression> .
+

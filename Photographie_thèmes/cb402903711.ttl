@@ -1,0 +1,64 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns2: <http://rdvocab.info/Elements/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns5: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns6: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb402903711> a skos:Concept ;
+    dcterms:created "1996-02-26" ;
+    dcterms:modified "2024-04-29" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb402903711#about> .
+
+<http://data.bnf.fr/ark:/12148/cb402903711#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns6:FRBNF 40290371 ;
+    dcterms:date "1899/1924" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 17,5 x 20,9 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb133255452>,
+        <http://data.bnf.fr/ark:/12148/cb13516396s> ;
+    dcterms:title "Inauguration statue Garnier : Carrefour Observatoire, [photographie]" ;
+    ns3:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b105195150> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb402903711#Expression> ;
+    ns3:P30279 "France" ;
+    ns7:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'apr. : Szarkowski, John. The Work of Atget. New-York, 19814-1985, t.3" ;
+    ns2:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'apr. : Szarkowski, John. The Work of Atget. New-York, 19814-1985, t.3" ;
+    ns5:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b105195150> ;
+    ns5:expressionManifested <http://data.bnf.fr/ark:/12148/cb402903711#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb402903711> .
+
+<http://data.bnf.fr/ark:/12148/cb133255452> skos:altLabel "Fête nationale"@fr ;
+    skos:prefLabel "Fêtes nationales"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb13516396s> skos:altLabel "Assistance (public)"@fr,
+        "Audience"@fr,
+        "Auditoire"@fr,
+        "Fréquentation"@fr,
+        "Public"@fr,
+        "Spectateurs"@fr,
+        "Visiteurs"@fr,
+        "Pubblico"@it ;
+    skos:prefLabel "Publics"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb402903711#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns4:r4030 <http://data.bnf.fr/ark:/12148/cb12541292d#about> ;
+    ns4:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns1:col <http://data.bnf.fr/ark:/12148/cb12541292d#about> ;
+    ns1:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb12541292d#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb133255452>,
+        <http://data.bnf.fr/ark:/12148/cb13516396s> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb402903711#frbr:Expression> .
+

@@ -1,0 +1,65 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns3: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns4: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns5: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns6: <http://rdvocab.info/Elements/> .
+@prefix ns7: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40291736v> a skos:Concept ;
+    dcterms:created "1996-05-10" ;
+    dcterms:modified "2013-07-19" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40291736v#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40291736v#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns7:FRBNF 40291736 ;
+    dcterms:date "1898/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 20,7 x 17,5 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb120462635>,
+        <http://data.bnf.fr/ark:/12148/cb15081916m>,
+        <http://data.bnf.fr/ark:/12148/cb162413069> ;
+    dcterms:title "R. de la Montagne S.te Genevieve - 1898 : [Eglise Saint-Etienne-du-Mont], [photographie]" ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b105189261> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40291736v#Expression> ;
+    ns1:P30279 "France" ;
+    ns4:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns6:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns2:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b105189261> ;
+    ns2:expressionManifested <http://data.bnf.fr/ark:/12148/cb40291736v#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40291736v> .
+
+<http://data.bnf.fr/ark:/12148/cb120462635> skos:prefLabel "Paris (France) -- Église Saint-Étienne du Mont"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15081916m> skos:altLabel "Affiches peintes"@fr,
+        "Murs peints en publicité"@fr,
+        "Murs réclames"@fr,
+        "Peinture murale publicitaire"@fr,
+        "Publicités murales peintes"@fr,
+        "Publicités peintes"@fr,
+        "Réclames peintes"@fr ;
+    skos:prefLabel "Murs peints publicitaires"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb162413069> skos:altLabel "Montagne-Sainte-Geneviève, Rue de la (Paris, France)"@fr,
+        "Rue de la Montagne-Sainte-Geneviève (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue de la Montagne-Sainte-Geneviève"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40291736v#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns5:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns3:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb120462635>,
+        <http://data.bnf.fr/ark:/12148/cb15081916m>,
+        <http://data.bnf.fr/ark:/12148/cb162413069> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40291736v#frbr:Expression> .
+

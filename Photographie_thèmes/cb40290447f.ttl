@@ -1,0 +1,60 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://rdvocab.info/Elements/> .
+@prefix ns5: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns6: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns7: <http://id.loc.gov/vocabulary/relators/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290447f> a skos:Concept ;
+    dcterms:created "1996-02-29" ;
+    dcterms:modified "2013-03-08" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290447f#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290447f#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns5:FRBNF 40290447 ;
+    dcterms:date "1902/1921" ;
+    dcterms:description "1 photogr. pos. sur papier aristotype : d'après négatif sur verre au gélatinobromure ; 22,7 x 17,2 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119445408>,
+        <http://data.bnf.fr/ark:/12148/cb11946452g>,
+        <http://data.bnf.fr/ark:/12148/cb12005002b> ;
+    dcterms:title "Un coin du Pont Neuf : [photographie]" ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10516664z> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40290447f#Expression> ;
+    ns1:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. - papier aristotype. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à dr." ;
+    ns4:note "Technique de l'image : photographie positive. - papier aristotype. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à dr." ;
+    ns2:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10516664z> ;
+    ns2:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290447f#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290447f> .
+
+<http://data.bnf.fr/ark:/12148/cb119445408> skos:altLabel "Ablocs"@fr,
+        "Piles (ponts)"@fr,
+        "Ponts -- Fondations"@fr ;
+    skos:prefLabel "Ponts -- Fondations et piles"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11946452g> skos:altLabel "Pont-Neuf (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Pont-Neuf"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12005002b> skos:prefLabel "Paris (France) -- Île de la Cité"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290447f#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns6:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns7:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119445408>,
+        <http://data.bnf.fr/ark:/12148/cb11946452g>,
+        <http://data.bnf.fr/ark:/12148/cb12005002b> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290447f#frbr:Expression> .
+

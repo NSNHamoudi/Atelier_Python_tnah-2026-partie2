@@ -1,0 +1,87 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns2: <http://rdvocab.info/Elements/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns6: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb402902754> a skos:Concept ;
+    dcterms:created "1996-02-16" ;
+    dcterms:modified "2013-08-19" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb402902754#about> .
+
+<http://data.bnf.fr/ark:/12148/cb402902754#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns6:FRBNF 40290275 ;
+    dcterms:date "1903/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 21 x 17 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119325308>,
+        <http://data.bnf.fr/ark:/12148/cb11934475f>,
+        <http://data.bnf.fr/ark:/12148/cb119346661>,
+        <http://data.bnf.fr/ark:/12148/cb11989609f>,
+        <http://data.bnf.fr/ark:/12148/cb125139012>,
+        <http://data.bnf.fr/ark:/12148/cb12525606n> ;
+    dcterms:title "Eglise St Sulpice - Mausolée par Slodtz du curé Longuet de Gergy - mort le 11 8.bre [octobre] 1750 - qui refusa en 1730 le cercueil d'Adrienne Lecouvreur : [photographie]" ;
+    ns3:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10519460f> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb402902754#Expression> ;
+    ns3:P30279 "France" ;
+    ns7:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns2:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns1:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10519460f> ;
+    ns1:expressionManifested <http://data.bnf.fr/ark:/12148/cb402902754#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb402902754> .
+
+<http://data.bnf.fr/ark:/12148/cb119325308> skos:altLabel "Contribution au concept de mort"@fr,
+        "Décès"@fr,
+        "Et la mort"@fr,
+        "Mort (philosophie)"@fr,
+        "Mort -- Philosophie"@fr,
+        "Philosophie de la mort"@fr ;
+    skos:prefLabel "Mort"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11934475f> skos:altLabel "Fosses (sépultures)"@fr,
+        "Hypogées"@fr,
+        "Sépultures"@fr,
+        "Tombeaux"@fr,
+        "Tombe"@it ;
+    skos:prefLabel "Tombes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119346661> skos:altLabel "Jeunes prêtres"@fr,
+        "Ministres du culte"@fr,
+        "Personnel sacerdotal"@fr ;
+    skos:prefLabel "Prêtres"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11989609f> skos:altLabel "Dans la peinture"@fr,
+        "Dans la sculpture"@fr,
+        "Dans les arts graphiques"@fr,
+        "Représentation dans l'art"@fr,
+        "Représentation iconographique"@fr ;
+    skos:prefLabel "Dans l'art"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb125139012> skos:prefLabel "Mausolées"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12525606n> skos:prefLabel "Paris (France) -- Église Saint-Sulpice"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb402902754#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns4:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119325308>,
+        <http://data.bnf.fr/ark:/12148/cb11934475f>,
+        <http://data.bnf.fr/ark:/12148/cb119346661>,
+        <http://data.bnf.fr/ark:/12148/cb11989609f>,
+        <http://data.bnf.fr/ark:/12148/cb125139012>,
+        <http://data.bnf.fr/ark:/12148/cb12525606n> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb402902754#frbr:Expression> .
+

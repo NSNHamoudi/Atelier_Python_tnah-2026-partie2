@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 0, "color": "#FFC1CC", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "cb469383456#Expression", "shape": "dot", "size": 15, "title": "http://data.bnf.fr/ark:/12148/cb469383456#Expression"}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb469383456#frbr:Expression", "label": "frbr:Expression", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#A2D2FF", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "cb12010336g", "shape": "dot", "size": 15, "title": "http://data.bnf.fr/ark:/12148/cb12010336g"}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "5daaf223b01f8f3e1bd9287170826fbc", "label": "Photos", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "3a69f0d587872ecc1b954186cb237bff", "label": "Phototypes", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression", "label": "Expression", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#A2D2FF", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "cb469383456#about", "shape": "dot", "size": 15, "title": "http://data.bnf.fr/ark:/12148/cb469383456#about"}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/date/2011/", "label": "http://data.bnf.fr/date/2011/", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "5ae8df86a90fdc031f76a872e4d6534d", "label": "Photographie", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "0e4bfce70752b984a04dcc8401abec64", "label": "Technique photographique", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "bc3e941901641383584f112a1ac9875f", "label": "[Paris] : [Cit\u00e9 de l\u0027architecture et du patrimoine] , [2011]", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "b02f520fdd2a1354c602d631e28e0ba0", "label": "Oeuvre photographique", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#A2D2FF", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb11932931q", "label": "cb11932931q", "shape": "dot", "size": 15, "title": "http://data.bnf.fr/ark:/12148/cb11932931q"}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "31c6871a86327e8876823e3b66ef4acf", "label": "Paris (France)", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "c8758b517083196f05ac29810b924aca", "label": "2011", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://rdaregistry.info/Elements/c/#C10007", "label": "C10007", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#A2D2FF", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb469383456", "label": "cb469383456", "shape": "dot", "size": 15, "title": "http://data.bnf.fr/ark:/12148/cb469383456"}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://www.w3.org/2004/02/skos/core#Concept", "label": "Concept", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "58472acf0bbb75a5b6416ea79d268f3e", "label": "[Cit\u00e9 de l\u0027architecture et du patrimoine]", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "5843f13472fbbc7056aa3767af899fa8", "label": "Oeuvres photographiques", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "af13ce438fd1cb2c761c0789157bfe0f", "label": "Feuilletage int\u00e9ractif regroupant des photographies d\u0027Eug\u00e8ne Atget", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "12899fb6f6bed207bd3a3e75ec8da0db", "label": "Clich\u00e9s photographiques", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "27cc1e29ac219354f63d31f2e9b9222f", "label": "1 ressource num\u00e9rique : coul.", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "4e2edef0c58daf52dec51450927b8a65", "label": "Objets photographiques", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "60f29105809dd00564bab5739b97085e", "label": "Photographies", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "b07a80024516474f01f9832f4843bad9", "label": "Contribution \u00e0 la photographie", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "c67dc54fa8f7f5fc2bbf157ded1ac963", "label": "[Paris] (France)", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "57fcd2ac52e68484dac54c539326e74a", "label": "46938345", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb11976044c", "label": "cb11976044c", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "1e0118e6ffc639206648ba9577d9b5ff", "label": "Et la photographie", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation", "label": "Manifestation", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://id.loc.gov/vocabulary/iso639-2/fre", "label": "fre", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "a8107c4e63cb45f5d57f4101a2b2ef0e", "label": "2021-12-30", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://rdaregistry.info/Elements/c/#C10006", "label": "C10006", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "8f4b619590d694ba12028c4d2d782df4", "label": "Oeuvres -- Photographies", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "707c6e0d426ec0ecdf3c89d78bc0379f", "label": "Photographie -- Technique", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "713c614162231f9c38fa5e1c25775143", "label": "Vues (photographies)", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "07367259f33e5ee3cbc5ca5da24f9b79", "label": "1900-1945", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://data.bnf.fr/ark:/12148/cb11889340k#about", "label": "about", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "ab94b3bb366d8c15343d89e105ff634a", "label": "1900-1945 (subdivision)", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "http://purl.org/dc/dcmitype/InteractiveResource", "label": "InteractiveResource", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "fb2ff3ee8b454f357736f219efdde211", "label": "Contribution \u00e0 la r\u00e9flexion sur la photographie", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "5fc252b7027e1ecfd6602d2fea3e819f", "label": "Documents photographiques", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#FEE1A8", "font": {"color": "#6E665E"}, "id": "https://catalogue.bnf.fr/ark:/12148/cb469383456", "label": "cb469383456", "shape": "dot", "size": 13}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "8ba80815c499023289135869c71943a2", "label": "2022-11-28", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "fb94ff793cf6b808d4cd0053d720ad27", "label": "Art photographique", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "4abb7a0f37cbee750c7d7a465b88bf0c", "label": "[Paris]", "shape": "dot", "size": 10}, {"borderWidth": 0, "color": "#C1E1C1", "font": {"color": "#6E665E"}, "id": "934814599254aa0d3708bad4f5267fc9", "label": "Images photographiques", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "sameAs", "to": "http://data.bnf.fr/ark:/12148/cb469383456#frbr:Expression", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "5daaf223b01f8f3e1bd9287170826fbc", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "3a69f0d587872ecc1b954186cb237bff", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "type", "to": "http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "P30011", "to": "http://data.bnf.fr/date/2011/", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "prefLabel", "to": "5ae8df86a90fdc031f76a872e4d6534d", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "0e4bfce70752b984a04dcc8401abec64", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "publisher", "to": "bc3e941901641383584f112a1ac9875f", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "b02f520fdd2a1354c602d631e28e0ba0", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb11932931q", "label": "prefLabel", "to": "31c6871a86327e8876823e3b66ef4acf", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "firstYear", "to": "c8758b517083196f05ac29810b924aca", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "type", "to": "http://rdaregistry.info/Elements/c/#C10007", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456", "label": "type", "to": "http://www.w3.org/2004/02/skos/core#Concept", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "P30176", "to": "58472acf0bbb75a5b6416ea79d268f3e", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "subject", "to": "http://data.bnf.fr/ark:/12148/cb11932931q", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "5843f13472fbbc7056aa3767af899fa8", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "abstract", "to": "af13ce438fd1cb2c761c0789157bfe0f", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "12899fb6f6bed207bd3a3e75ec8da0db", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "type", "to": "http://data.bnf.fr/ark:/12148/cb12010336g", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "description", "to": "27cc1e29ac219354f63d31f2e9b9222f", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "4e2edef0c58daf52dec51450927b8a65", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "title", "to": "60f29105809dd00564bab5739b97085e", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "b07a80024516474f01f9832f4843bad9", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "P30279", "to": "c67dc54fa8f7f5fc2bbf157ded1ac963", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "FRBNF", "to": "57fcd2ac52e68484dac54c539326e74a", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "subject", "to": "http://data.bnf.fr/ark:/12148/cb11976044c", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "1e0118e6ffc639206648ba9577d9b5ff", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "type", "to": "http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "language", "to": "http://id.loc.gov/vocabulary/iso639-2/fre", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "subject", "to": "http://data.bnf.fr/ark:/12148/cb12010336g", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "subject", "to": "http://data.bnf.fr/ark:/12148/cb11932931q", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456", "label": "created", "to": "a8107c4e63cb45f5d57f4101a2b2ef0e", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "type", "to": "http://rdaregistry.info/Elements/c/#C10006", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "8f4b619590d694ba12028c4d2d782df4", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "707c6e0d426ec0ecdf3c89d78bc0379f", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "713c614162231f9c38fa5e1c25775143", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb11976044c", "label": "prefLabel", "to": "07367259f33e5ee3cbc5ca5da24f9b79", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "r530", "to": "http://data.bnf.fr/ark:/12148/cb11889340k#about", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb11976044c", "label": "altLabel", "to": "ab94b3bb366d8c15343d89e105ff634a", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "label": "type", "to": "http://purl.org/dc/dcmitype/InteractiveResource", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "60f29105809dd00564bab5739b97085e", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "fb2ff3ee8b454f357736f219efdde211", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "expressionManifested", "to": "http://data.bnf.fr/ark:/12148/cb469383456#Expression", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "5fc252b7027e1ecfd6602d2fea3e819f", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "seeAlso", "to": "https://catalogue.bnf.fr/ark:/12148/cb469383456", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456", "label": "modified", "to": "8ba80815c499023289135869c71943a2", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "subject", "to": "http://data.bnf.fr/ark:/12148/cb11976044c", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "fb94ff793cf6b808d4cd0053d720ad27", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456#about", "label": "placeOfPublication", "to": "4abb7a0f37cbee750c7d7a465b88bf0c", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb469383456", "label": "focus", "to": "http://data.bnf.fr/ark:/12148/cb469383456#about", "width": 2}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.3}}, "color": {"color": "#E8E8E8", "highlight": "#FFC1CC"}, "font": {"color": "#B0B0B0", "size": 9, "strokeWidth": 0}, "from": "http://data.bnf.fr/ark:/12148/cb12010336g", "label": "altLabel", "to": "934814599254aa0d3708bad4f5267fc9", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"font": {"strokeWidth": 0, "align": "top"}, "shadow": {"enabled": true, "color": "rgba(0,0,0,0.05)", "size": 7, "x": 3, "y": 3}}, "edges": {"smooth": {"type": "continuous", "roundness": 0.4}, "font": {"strokeWidth": 0}}, "physics": {"forceAtlas2Based": {"gravitationalConstant": -100, "springLength": 120}, "solver": "forceAtlas2Based", "stabilization": {"iterations": 100}}, "interaction": {"hover": true, "navigationButtons": false}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

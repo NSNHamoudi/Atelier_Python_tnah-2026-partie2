@@ -1,0 +1,102 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns4: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb436179020> a skos:Concept ;
+    dcterms:created "2013-06-24" ;
+    dcterms:modified "2013-06-27" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb436179020#about> .
+
+<http://data.bnf.fr/ark:/12148/cb436179020#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns1:FRBNF 43617902 ;
+    dcterms:date "1898/1927" ;
+    dcterms:description "246 photogr. pos. : formats divers" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119416070>,
+        <http://data.bnf.fr/ark:/12148/cb119418097>,
+        <http://data.bnf.fr/ark:/12148/cb119463150>,
+        <http://data.bnf.fr/ark:/12148/cb11954314c>,
+        <http://data.bnf.fr/ark:/12148/cb119576843>,
+        <http://data.bnf.fr/ark:/12148/cb11958014h>,
+        <http://data.bnf.fr/ark:/12148/cb119581859>,
+        <http://data.bnf.fr/ark:/12148/cb11959501s>,
+        <http://data.bnf.fr/ark:/12148/cb11960273v>,
+        <http://data.bnf.fr/ark:/12148/cb119690875>,
+        <http://data.bnf.fr/ark:/12148/cb12008687x>,
+        <http://data.bnf.fr/ark:/12148/cb12164952j>,
+        <http://data.bnf.fr/ark:/12148/cb13173527b#about>,
+        <http://data.bnf.fr/ark:/12148/cb131954169>,
+        <http://data.bnf.fr/ark:/12148/cb15591363j> ;
+    dcterms:title "[Recueil. Photographies positives. Oeuvre d'Eugène Atget. Département des Hauts-de-Seine, département de la Seine-et-Marne et département des Yvelines. Boîte fol B]" ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb436179020#Expression> ;
+    ns2:P30279 "France" ;
+    ns3:expressionManifested <http://data.bnf.fr/ark:/12148/cb436179020#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb436179020> .
+
+<http://data.bnf.fr/ark:/12148/cb119416070> skos:prefLabel "Provins (Seine-et-Marne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119418097> skos:altLabel "Yvelines"@fr ;
+    skos:prefLabel "Yvelines (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119463150> skos:prefLabel "Sceaux (Hauts-de-Seine, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11954314c> skos:prefLabel "Courbevoie (Hauts-de-Seine, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119576843> skos:altLabel "Seine-et-Marne"@fr ;
+    skos:prefLabel "Seine-et-Marne (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11958014h> skos:prefLabel "Brie-Comte-Robert (Seine-et-Marne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119581859> skos:prefLabel "Fontainebleau (Seine-et-Marne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11959501s> skos:prefLabel "Vanves (Hauts-de-Seine, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11960273v> skos:altLabel "Hauts-de-Seine"@fr ;
+    skos:prefLabel "Hauts-de-Seine (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119690875> skos:prefLabel "Rampillon (Seine-et-Marne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12008687x> skos:altLabel "Versailles (Yvelines, France) -- Jardins du château"@fr,
+        "Versailles (Yvelines, France) -- Parc du château"@fr ;
+    skos:prefLabel "Versailles (Yvelines, France) -- Château -- Jardins"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12164952j> skos:prefLabel "Dammartin-en-Goële (Seine-et-Marne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb131954169> skos:altLabel "Antony (Hauts-de-Seine, France) -- Parc de Sceaux"@fr,
+        "Parc de Sceaux (Hauts-de-Seine, France)"@fr,
+        "Sceaux (Hauts-de-Seine, France) -- Parc de Sceaux"@fr ;
+    skos:prefLabel "Sceaux, Parc de (Hauts-de-Seine, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15591363j> skos:prefLabel "Nantouillet (Seine-et-Marne, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb436179020#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns4:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119416070>,
+        <http://data.bnf.fr/ark:/12148/cb119418097>,
+        <http://data.bnf.fr/ark:/12148/cb119463150>,
+        <http://data.bnf.fr/ark:/12148/cb11954314c>,
+        <http://data.bnf.fr/ark:/12148/cb119576843>,
+        <http://data.bnf.fr/ark:/12148/cb11958014h>,
+        <http://data.bnf.fr/ark:/12148/cb119581859>,
+        <http://data.bnf.fr/ark:/12148/cb11959501s>,
+        <http://data.bnf.fr/ark:/12148/cb11960273v>,
+        <http://data.bnf.fr/ark:/12148/cb119690875>,
+        <http://data.bnf.fr/ark:/12148/cb12008687x>,
+        <http://data.bnf.fr/ark:/12148/cb12164952j>,
+        <http://data.bnf.fr/ark:/12148/cb131954169>,
+        <http://data.bnf.fr/ark:/12148/cb15591363j> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb436179020#frbr:Expression> .
+

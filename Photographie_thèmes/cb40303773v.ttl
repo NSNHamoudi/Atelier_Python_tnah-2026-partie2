@@ -1,0 +1,69 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns2: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://rdvocab.info/Elements/> .
+@prefix ns5: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://id.loc.gov/vocabulary/relators/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40303773v> a skos:Concept ;
+    dcterms:created "1997-11-18" ;
+    dcterms:modified "2013-10-18" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40303773v#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40303773v#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns2:FRBNF 40303773 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932044k>,
+        <http://data.bnf.fr/ark:/12148/cb12491842c>,
+        <http://data.bnf.fr/ark:/12148/cb166973592> ;
+    dcterms:title "[Rue Saint-Médard] : [photographie]" ;
+    ns5:P30139 <http://data.bnf.fr/ark:/12148/cb40303773v#Expression> ;
+    ns5:P30279 "France" ;
+    ns1:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns4:note "Technique de l'image : photographie positive. Note : Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb40303773v#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40303773v> .
+
+<http://data.bnf.fr/ark:/12148/cb11932044k> skos:altLabel "Complexes hôteliers"@fr,
+        "Hôtellerie"@fr,
+        "Hôtels de charme"@fr,
+        "Industrie hôtelière"@fr,
+        "Équipements hôteliers"@fr ;
+    skos:prefLabel "Hôtels"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12491842c> skos:altLabel "Charrettes à bras"@fr,
+        "Charrettes à traction humaine"@fr,
+        "Veicoli a braccia"@it ;
+    skos:prefLabel "Voitures à bras"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb166973592> skos:altLabel "Rue Saint-Médard (Paris, France)"@fr,
+        "Saint-Médard, Rue (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue Saint-Médard"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40303773v#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns3:r9990 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns7:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932044k>,
+        <http://data.bnf.fr/ark:/12148/cb12491842c>,
+        <http://data.bnf.fr/ark:/12148/cb166973592> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40303773v#frbr:Expression> .
+

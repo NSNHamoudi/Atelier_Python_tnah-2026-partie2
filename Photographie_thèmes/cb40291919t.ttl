@@ -1,0 +1,65 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns5: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns6: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40291919t> a skos:Concept ;
+    dcterms:created "1996-05-22" ;
+    dcterms:modified "2013-07-19" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40291919t#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40291919t#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns2:FRBNF 40291919 ;
+    dcterms:date "1898/1900" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 21,6 x 17,5 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119822058>,
+        <http://data.bnf.fr/ark:/12148/cb137565161#about>,
+        <http://data.bnf.fr/ark:/12148/cb16241256k> ;
+    dcterms:title "Porte des Carmes - R. des Carmes 15 - 1898 : [Chapelle du Collège des Lombards], [photographie]" ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b105188669>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b10538778v> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40291919t#Expression> ;
+    ns1:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns7:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns4:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b105188669>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b10538778v> ;
+    ns4:expressionManifested <http://data.bnf.fr/ark:/12148/cb40291919t#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40291919t> .
+
+<http://data.bnf.fr/ark:/12148/cb119822058> skos:altLabel "Chapelles (constructions)"@fr,
+        "Chapelles castrales"@fr,
+        "Chapelles palatiales"@fr,
+        "Chapelles palatines"@fr,
+        "Saintes-chapelles"@fr ;
+    skos:prefLabel "Chapelles"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb16241256k> skos:altLabel "Carmes, Rue des (Paris, France)"@fr,
+        "Paris (France) -- Rue Saint-Hilaire"@fr,
+        "Paris (France) -- Rue de Bruneau"@fr,
+        "Paris (France) -- Rue du Clos-Bruneau"@fr,
+        "Rue des Carmes (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue des Carmes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40291919t#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns5:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns6:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119822058>,
+        <http://data.bnf.fr/ark:/12148/cb16241256k> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40291919t#frbr:Expression> .
+

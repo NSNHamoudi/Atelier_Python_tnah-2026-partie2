@@ -1,0 +1,55 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns2: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns5: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns6: <http://rdvocab.info/Elements/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb402902398> a skos:Concept ;
+    dcterms:created "1996-02-15" ;
+    dcterms:modified "2013-08-19" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb402902398#about> .
+
+<http://data.bnf.fr/ark:/12148/cb402902398#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns1:FRBNF 40290239 ;
+    dcterms:date "1903/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 17,5 x 21,4 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11973081v>,
+        <http://data.bnf.fr/ark:/12148/cb12525606n> ;
+    dcterms:title "[Eglise] St Sulpice - Chapelle du Sacré Coeur - Boiseries du XVIIIe s. : [photographie]" ;
+    ns3:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b105194056> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb402902398#Expression> ;
+    ns3:P30279 "France" ;
+    ns7:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre" ;
+    ns6:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre" ;
+    ns5:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b105194056> ;
+    ns5:expressionManifested <http://data.bnf.fr/ark:/12148/cb402902398#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb402902398> .
+
+<http://data.bnf.fr/ark:/12148/cb11973081v> skos:altLabel "Lambrissage"@fr,
+        "Panneautage mural"@fr,
+        "Panneaux menuisés"@fr ;
+    skos:prefLabel "Panneautage (menuiserie)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12525606n> skos:prefLabel "Paris (France) -- Église Saint-Sulpice"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb402902398#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns4:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns2:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11973081v>,
+        <http://data.bnf.fr/ark:/12148/cb12525606n> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb402902398#frbr:Expression> .
+

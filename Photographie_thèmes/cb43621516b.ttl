@@ -1,0 +1,88 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns2: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns3: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns4: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb43621516b> a skos:Concept ;
+    dcterms:created "2013-06-27" ;
+    dcterms:modified "2013-07-31" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb43621516b#about> .
+
+<http://data.bnf.fr/ark:/12148/cb43621516b#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns2:FRBNF 43621516 ;
+    dcterms:date "1898/1923" ;
+    dcterms:description "73 photogr. pos. : formats divers" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119323521>,
+        <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119427917>,
+        <http://data.bnf.fr/ark:/12148/cb11943211m>,
+        <http://data.bnf.fr/ark:/12148/cb119451872>,
+        <http://data.bnf.fr/ark:/12148/cb11960273v>,
+        <http://data.bnf.fr/ark:/12148/cb11963863x>,
+        <http://data.bnf.fr/ark:/12148/cb13173527b#about>,
+        <http://data.bnf.fr/ark:/12148/cb166938940> ;
+    dcterms:title "[Recueil. Photographies positives. Oeuvre d'Eugène Atget. Paris, département des Hauts-de-Seine et département de l'Oise. Transports parisiens. Métiers. Boîte fol B]" ;
+    ns4:P30139 <http://data.bnf.fr/ark:/12148/cb43621516b#Expression> ;
+    ns4:P30279 "France" ;
+    ns3:expressionManifested <http://data.bnf.fr/ark:/12148/cb43621516b#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb43621516b> .
+
+<http://data.bnf.fr/ark:/12148/cb119323521> skos:altLabel "Arts et métiers"@fr,
+        "Métiers d'autrefois"@fr,
+        "Métiers manuels"@fr,
+        "Métiers oubliés"@fr,
+        "Métiers traditionnels"@fr,
+        "Vieux métiers"@fr ;
+    skos:prefLabel "Métiers"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11932931q> skos:prefLabel "Paris (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119427917> skos:altLabel "Passagers -- Transport"@fr,
+        "Trafic passagers"@fr,
+        "Transport -- Trafic voyageurs"@fr,
+        "Transport de passagers"@fr,
+        "Transport des passagers"@fr,
+        "Transport des voyageurs"@fr,
+        "Transport touristique"@fr,
+        "Transports de voyageurs"@fr,
+        "Voyageurs -- Transport"@fr ;
+    skos:prefLabel "Transport de voyageurs"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11943211m> skos:prefLabel "Bourg-la-Reine (Hauts-de-Seine, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119451872> skos:altLabel "Oise"@fr,
+        "Oise (département)"@fr ;
+    skos:prefLabel "Oise (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11960273v> skos:altLabel "Hauts-de-Seine"@fr ;
+    skos:prefLabel "Hauts-de-Seine (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11963863x> skos:prefLabel "Meudon (Hauts-de-Seine, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb166938940> skos:prefLabel "Courteuil (Oise, France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb43621516b#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns1:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119323521>,
+        <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119427917>,
+        <http://data.bnf.fr/ark:/12148/cb11943211m>,
+        <http://data.bnf.fr/ark:/12148/cb119451872>,
+        <http://data.bnf.fr/ark:/12148/cb11960273v>,
+        <http://data.bnf.fr/ark:/12148/cb11963863x>,
+        <http://data.bnf.fr/ark:/12148/cb166938940> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb43621516b#frbr:Expression> .
+

@@ -1,0 +1,50 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns2: <http://rdvocab.info/Elements/> .
+@prefix ns3: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns4: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns6: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb44195244f> a skos:Concept ;
+    dcterms:created "2017-09-28" ;
+    dcterms:modified "2018-08-09" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb44195244f#about> .
+
+<http://data.bnf.fr/ark:/12148/cb44195244f#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns1:FRBNF 44195244 ;
+    ns1:firstYear 1907 ;
+    dcterms:date "1907" ;
+    dcterms:description "photogr. pos.: papier albuminé : d'après nég. sur verre au gélatino-bromure, monochr. brun ; 220 x 175 mm (épr.)." ;
+    dcterms:publisher "Rouen : [s.n.] , 1907 ca" ;
+    dcterms:title "Hôtel d'Arras: 36-38, rue Saint-Patrice." ;
+    ns3:P30011 <http://data.bnf.fr/date/1907/> ;
+    ns3:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10052925c> ;
+    ns3:P30139 <http://data.bnf.fr/ark:/12148/cb44195244f#Expression> ;
+    ns3:P30176 "[s.n.]" ;
+    ns3:P30279 "Rouen" ;
+    ns7:P60470 "Note : Ces épreuves originales sont tirées de plaques de verre figurant presque toutes dans les collections des Archives Photographiques de la Direction de l'Architecture. L'ensemble a été acquis par la BMR en 1952.. Sources : Quand Atget photographiait Rouen au début du siècle. Photographies de la BMR exposées au Musée des Beaux-Arts, Rouen, juin-juillet 1979 / Préf. de Claire Fons. Rouen: Bibliothèque municipale, 1979. [Usuel cat. expo. n°21] ----- Médiathèque de l'Architecture et du Patrimoine. Archives photographiques de la Direction de l'Architecture / Commission des Monuments Historiques. Paris: Ministère de la culture et de la communication, 2002. [Ressource en ligne] <http://www.mediatheque-patrimoine.culture.gouv.fr>" ;
+    ns2:dateOfPublicationManifestation <http://data.bnf.fr/date/1907/> ;
+    ns2:note "Note : Ces épreuves originales sont tirées de plaques de verre figurant presque toutes dans les collections des Archives Photographiques de la Direction de l'Architecture. L'ensemble a été acquis par la BMR en 1952.. Sources : Quand Atget photographiait Rouen au début du siècle. Photographies de la BMR exposées au Musée des Beaux-Arts, Rouen, juin-juillet 1979 / Préf. de Claire Fons. Rouen: Bibliothèque municipale, 1979. [Usuel cat. expo. n°21] ----- Médiathèque de l'Architecture et du Patrimoine. Archives photographiques de la Direction de l'Architecture / Commission des Monuments Historiques. Paris: Ministère de la culture et de la communication, 2002. [Ressource en ligne] <http://www.mediatheque-patrimoine.culture.gouv.fr>" ;
+    ns2:placeOfPublication "Rouen" ;
+    ns2:publishersName "[s.n.]" ;
+    ns4:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10052925c> ;
+    ns4:expressionManifested <http://data.bnf.fr/ark:/12148/cb44195244f#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb44195244f> .
+
+<http://data.bnf.fr/ark:/12148/cb44195244f#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns6:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb44195244f#frbr:Expression> .
+

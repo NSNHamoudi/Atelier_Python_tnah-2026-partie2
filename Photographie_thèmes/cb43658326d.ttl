@@ -1,0 +1,63 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns5: <http://rdvocab.info/Elements/> .
+@prefix ns6: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns7: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb43658326d> a skos:Concept ;
+    dcterms:created "2013-08-27" ;
+    dcterms:modified "2013-08-27" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb43658326d#about> .
+
+<http://data.bnf.fr/ark:/12148/cb43658326d#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns4:FRBNF 43658326 ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119345495>,
+        <http://data.bnf.fr/ark:/12148/cb11948683s> ;
+    dcterms:title "[Une fille de la rue Asselin] : [photographie]" ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb43658326d#Expression> ;
+    ns1:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. Note : Tirage moderne réalisé par Marcel Bovis" ;
+    ns5:note "Technique de l'image : photographie positive. Note : Tirage moderne réalisé par Marcel Bovis" ;
+    ns7:expressionManifested <http://data.bnf.fr/ark:/12148/cb43658326d#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb43658326d> .
+
+<http://data.bnf.fr/ark:/12148/cb119345495> skos:altLabel "Femmes prostituées"@fr,
+        "Prostitution féminine"@fr,
+        "Prostituées féminines"@fr,
+        "Prostitués féminins"@fr ;
+    skos:prefLabel "Prostituées"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11948683s> skos:altLabel "Nu en photographie"@fr,
+        "Nu photographique"@fr,
+        "Nu, Photographie de"@fr,
+        "Nus, Photographie de"@fr,
+        "Photographie de nu"@fr ;
+    skos:prefLabel "Photographie de nus"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb43658326d#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns6:r4010 <http://data.bnf.fr/ark:/12148/cb11893654v#about> ;
+    ns6:r532 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns6:r534 <http://data.bnf.fr/ark:/12148/cb11893654v#about> ;
+    ns2:fmo <http://data.bnf.fr/ark:/12148/cb11893654v#about> ;
+    ns2:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11893654v#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11893654v#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119345495>,
+        <http://data.bnf.fr/ark:/12148/cb11948683s> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb43658326d#frbr:Expression> .
+

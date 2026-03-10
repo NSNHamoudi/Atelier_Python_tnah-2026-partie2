@@ -1,0 +1,51 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40291739w> a skos:Concept ;
+    dcterms:created "1996-05-10" ;
+    dcterms:modified "2013-05-07" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40291739w#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40291739w#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns2:FRBNF 40291739 ;
+    ns2:firstYear 1898 ;
+    dcterms:date "1898/1900" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 16,4 x 21,5 cm (épr.)" ;
+    dcterms:publisher ", [Entre 1898 et 1900 d'apr. nég. 1898]" ;
+    dcterms:title "Ecole de Droit - Place du Panthéon - 1899 : [photographie]" ;
+    ns1:P30011 <http://data.bnf.fr/date/1898/> ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10518930r>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b10518934j> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40291739w#Expression> ;
+    ns5:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B, exemplaire n°1. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à dr." ;
+    ns7:dateOfPublicationManifestation <http://data.bnf.fr/date/1898/> ;
+    ns7:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (8)-BOITE FOL B, exemplaire n°1. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3. - Num. de nég. coupé dans l'épr. en b. à dr." ;
+    ns6:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10518930r>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b10518934j> ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb40291739w#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40291739w> .
+
+<http://data.bnf.fr/ark:/12148/cb40291739w#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r4030 <http://data.bnf.fr/ark:/12148/cb12541292d#about> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:col <http://data.bnf.fr/ark:/12148/cb12541292d#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb12541292d#about> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40291739w#frbr:Expression> .
+

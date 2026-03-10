@@ -1,0 +1,49 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns5: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns6: <http://rdvocab.info/Elements/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40292455j> a skos:Concept ;
+    dcterms:created "1996-06-13" ;
+    dcterms:modified "2013-03-06" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40292455j#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40292455j#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns5:FRBNF 40292455 ;
+    dcterms:date "1906/1907" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 17,5 x 21,5 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb12248181n> ;
+    dcterms:title "[Hôtel de Roquelaure - Juillet 1906] : [photographie]" ;
+    ns2:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10516469f> ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb40292455j#Expression> ;
+    ns2:P30279 "France" ;
+    ns7:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Tirage initialement présenté sur une feuille de montage portant la mention manuscrite du photographe : \"7e arr. Hôtel de Roquelaure / Juillet 1906\"" ;
+    ns6:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Tirage initialement présenté sur une feuille de montage portant la mention manuscrite du photographe : \"7e arr. Hôtel de Roquelaure / Juillet 1906\"" ;
+    ns4:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10516469f> ;
+    ns4:expressionManifested <http://data.bnf.fr/ark:/12148/cb40292455j#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40292455j> .
+
+<http://data.bnf.fr/ark:/12148/cb12248181n> skos:altLabel "Paris (France) -- Hôtel de Cambacérès"@fr ;
+    skos:prefLabel "Paris (France) -- Hôtel de Roquelaure"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40292455j#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns1:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb12248181n> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40292455j#frbr:Expression> .
+

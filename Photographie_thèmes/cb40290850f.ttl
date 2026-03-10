@@ -1,0 +1,102 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://rdvocab.info/Elements/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns6: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns7: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290850f> a skos:Concept ;
+    dcterms:created "1996-03-27" ;
+    dcterms:modified "2013-07-25" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290850f#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290850f#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns6:FRBNF 40290850 ;
+    dcterms:date "1902/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 20,7 x 17,4 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932762f>,
+        <http://data.bnf.fr/ark:/12148/cb119413551>,
+        <http://data.bnf.fr/ark:/12148/cb11960090w>,
+        <http://data.bnf.fr/ark:/12148/cb119730183>,
+        <http://data.bnf.fr/ark:/12148/cb11975664d>,
+        <http://data.bnf.fr/ark:/12148/cb12647464b>,
+        <http://data.bnf.fr/ark:/12148/cb16667234t> ;
+    dcterms:title "A la Petite Hotte : 1 Rue des Orfèvres, [photographie]" ;
+    ns2:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10507030p>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b105166516> ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb40290850f#Expression> ;
+    ns2:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (1)-BOITE FOL B. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns4:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (1)-BOITE FOL B. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns1:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10507030p>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b105166516> ;
+    ns1:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290850f#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290850f> .
+
+<http://data.bnf.fr/ark:/12148/cb11932762f> skos:altLabel "Restauration (alimentation)"@fr ;
+    skos:prefLabel "Restaurants"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119413551> skos:altLabel "Boissons alcooliques"@fr ;
+    skos:prefLabel "Boissons alcoolisées"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11960090w> skos:altLabel "Devantures de magasins"@fr,
+        "Façades de magasins"@fr,
+        "Magasins, Devantures de"@fr ;
+    skos:prefLabel "Magasins -- Façades"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119730183> skos:altLabel "Enseignes commerciales"@fr,
+        "Signes et indications"@fr ;
+    skos:prefLabel "Enseignes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11975664d> skos:prefLabel "Industrie et commerce"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12647464b> skos:altLabel "Fer forgé"@fr,
+        "Fer forgé, Objets en"@fr,
+        "Fer ornemental"@fr,
+        "Ferronnerie (architecture)"@fr,
+        "Ferronnerie architecturale"@fr,
+        "Ferronnerie décorative"@fr,
+        "Ferronneries"@fr,
+        "Ferrures"@fr,
+        "Objets en fer forgé"@fr,
+        "Serrurerie d'art"@fr ;
+    skos:prefLabel "Ferronnerie d'art"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb16667234t> skos:altLabel "Chapelle-aux-Orfèvres, Rue de la (Paris, France)"@fr,
+        "Deux-Portes, Rue des (Paris, France)"@fr,
+        "Moines de Joyenval, Rue aux (Paris, France)"@fr,
+        "Orfèvres, Rue des (Paris, France)"@fr,
+        "Paris (France) -- Rue aux Moines de Joyenval"@fr,
+        "Paris (France) -- Rue de la Chapelle-aux-Orfèvres"@fr,
+        "Paris (France) -- Rue des Deux-Portes"@fr,
+        "Rue aux Moines de Joyenval (Paris, France)"@fr,
+        "Rue de la Chapelle-aux-Orfèvres (Paris, France)"@fr,
+        "Rue des Deux-Portes (Paris, France)"@fr,
+        "Rue des Orfèvres (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue des Orfèvres"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290850f#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns7:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11932762f>,
+        <http://data.bnf.fr/ark:/12148/cb119413551>,
+        <http://data.bnf.fr/ark:/12148/cb11960090w>,
+        <http://data.bnf.fr/ark:/12148/cb119730183>,
+        <http://data.bnf.fr/ark:/12148/cb11975664d>,
+        <http://data.bnf.fr/ark:/12148/cb12647464b>,
+        <http://data.bnf.fr/ark:/12148/cb16667234t> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290850f#frbr:Expression> .
+

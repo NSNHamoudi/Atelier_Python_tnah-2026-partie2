@@ -1,0 +1,82 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://rdvocab.info/Elements/> .
+@prefix ns5: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40303874g> a skos:Concept ;
+    dcterms:created "1997-11-24" ;
+    dcterms:modified "2013-10-18" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40303874g#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40303874g#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns5:FRBNF 40303874 ;
+    dcterms:date "1977" ;
+    dcterms:description "1 photogr. pos." ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119540465>,
+        <http://data.bnf.fr/ark:/12148/cb119541004>,
+        <http://data.bnf.fr/ark:/12148/cb14404418j>,
+        <http://data.bnf.fr/ark:/12148/cb15081916m> ;
+    dcterms:title "[Place Pigalle] : [photographie]" ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb40303874g#Expression> ;
+    ns2:P30279 "France" ;
+    ns7:P60470 "Technique de l'image : photographie positive. Note : Nég. vers 1925. - Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns4:note "Technique de l'image : photographie positive. Note : Nég. vers 1925. - Tirage moderne d'après un négatif des Archives photographiques" ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb40303874g#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40303874g> .
+
+<http://data.bnf.fr/ark:/12148/cb119540465> skos:altLabel "Arbres dans les villes"@fr,
+        "Arbres en ville"@fr,
+        "Arbres urbains"@fr,
+        "Boisés urbains"@fr,
+        "Villes -- Arbres"@fr ;
+    skos:prefLabel "Arbres des villes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119541004> skos:altLabel "Bornes-fontaines"@fr,
+        "Fontaines de bassins"@fr,
+        "Fontaines de jardins"@fr,
+        "Fontaines publiques"@fr,
+        "Vasques"@fr ;
+    skos:prefLabel "Fontaines"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb14404418j> skos:altLabel "Pigalle, Place (Paris, France)"@fr,
+        "Place Pigalle (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Place Pigalle"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb15081916m> skos:altLabel "Affiches peintes"@fr,
+        "Murs peints en publicité"@fr,
+        "Murs réclames"@fr,
+        "Peinture murale publicitaire"@fr,
+        "Publicités murales peintes"@fr,
+        "Publicités peintes"@fr,
+        "Réclames peintes"@fr ;
+    skos:prefLabel "Murs peints publicitaires"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40303874g#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r3090 <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns3:r9990 <http://data.bnf.fr/ark:/12148/cb11876183c#about> ;
+    ns1:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11876183c#about>,
+        <http://data.bnf.fr/ark:/12148/cb11889340k#about>,
+        <http://data.bnf.fr/ark:/12148/cb11904262x#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119540465>,
+        <http://data.bnf.fr/ark:/12148/cb119541004>,
+        <http://data.bnf.fr/ark:/12148/cb14404418j>,
+        <http://data.bnf.fr/ark:/12148/cb15081916m> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40303874g#frbr:Expression> .
+

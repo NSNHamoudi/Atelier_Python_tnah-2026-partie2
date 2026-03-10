@@ -1,0 +1,57 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns2: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns3: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns4: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns5: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns6: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40291777f> a skos:Concept ;
+    dcterms:created "1996-05-14" ;
+    dcterms:modified "2013-07-24" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40291777f#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40291777f#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns3:FRBNF 40291777 ;
+    dcterms:date "1908/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 16,9 x 21,5 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119358675>,
+        <http://data.bnf.fr/ark:/12148/cb119563334> ;
+    dcterms:title "Rue St-Jacques après sa démolition, vue prise du coin de la rue de la Parcheminerie : [février 1908], [photographie]" ;
+    ns1:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10517370s> ;
+    ns1:P30139 <http://data.bnf.fr/ark:/12148/cb40291777f#Expression> ;
+    ns1:P30279 "France" ;
+    ns6:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre" ;
+    ns7:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre" ;
+    ns2:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10517370s> ;
+    ns2:expressionManifested <http://data.bnf.fr/ark:/12148/cb40291777f#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40291777f> .
+
+<http://data.bnf.fr/ark:/12148/cb119358675> skos:altLabel "Chantiers de démolition"@fr,
+        "Constructions -- Démolition"@fr,
+        "Déconstruction (constructions)"@fr,
+        "Démantèlement"@fr,
+        "Travaux de démolition"@fr ;
+    skos:prefLabel "Démolition"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119563334> skos:prefLabel "Paris (France) -- Rue Saint-Jacques"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40291777f#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns5:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns4:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb119358675>,
+        <http://data.bnf.fr/ark:/12148/cb119563334> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40291777f#frbr:Expression> .
+

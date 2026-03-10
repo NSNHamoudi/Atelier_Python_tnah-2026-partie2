@@ -1,0 +1,97 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns2: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns3: <http://rdaregistry.info/Elements/u/#> .
+@prefix ns4: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns5: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns6: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns7: <http://rdvocab.info/Elements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb402927301> a skos:Concept ;
+    dcterms:created "1996-06-24" ;
+    dcterms:modified "2022-12-13" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb402927301#about> .
+
+<http://data.bnf.fr/ark:/12148/cb402927301#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns4:FRBNF 40292730 ;
+    dcterms:date "1907/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 16,8 x 21 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11931683w>,
+        <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119730183>,
+        <http://data.bnf.fr/ark:/12148/cb11976032c>,
+        <http://data.bnf.fr/ark:/12148/cb12384766f>,
+        <http://data.bnf.fr/ark:/12148/cb12647464b>,
+        <http://data.bnf.fr/ark:/12148/cb14945056x#about> ;
+    dcterms:title "Auberge du Bourdon : 64 Rue de Varenne [juin 1907], [photographie]" ;
+    ns2:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10507023m>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b105175176> ;
+    ns2:P30139 <http://data.bnf.fr/ark:/12148/cb402927301#Expression> ;
+    ns2:P30279 "France" ;
+    ns3:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (11)-BOITE FOL B. Note : \"Au Bourdon\" fondé en 1793. - Le support initial porte la date : \"juin 1907\"" ;
+    ns7:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Notice décrivant le tirage conservé sous la cote BnF, Estampes, EO-109 (11)-BOITE FOL B. Note : \"Au Bourdon\" fondé en 1793. - Le support initial porte la date : \"juin 1907\"" ;
+    ns1:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10507023m>,
+        <https://gallica.bnf.fr/ark:/12148/btv1b105175176> ;
+    ns1:expressionManifested <http://data.bnf.fr/ark:/12148/cb402927301#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb402927301> .
+
+<http://data.bnf.fr/ark:/12148/cb11931683w> skos:altLabel "Bars"@fr,
+        "Bistrots"@fr,
+        "Brasseries (cafés)"@fr,
+        "Cafés (établissements)"@fr,
+        "Cafés publics"@fr,
+        "Cafés-bars"@fr,
+        "Débits de boissons"@fr,
+        "Estaminets"@fr,
+        "Zincs (cafés)"@fr ;
+    skos:prefLabel "Cafés"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11932931q> skos:prefLabel "Paris (France)"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb119730183> skos:altLabel "Enseignes commerciales"@fr,
+        "Signes et indications"@fr ;
+    skos:prefLabel "Enseignes"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb11976032c> skos:altLabel "18e siècle (subdivision)"@fr,
+        "Dix-huitième siècle (subdivision)"@fr,
+        "XVIIIe siècle (subdivision)"@fr ;
+    skos:prefLabel "18e siècle"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12384766f> skos:altLabel "Rue de Varenne (Paris, France)"@fr,
+        "Varenne, Rue de (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue de Varenne"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb12647464b> skos:altLabel "Fer forgé"@fr,
+        "Fer forgé, Objets en"@fr,
+        "Fer ornemental"@fr,
+        "Ferronnerie (architecture)"@fr,
+        "Ferronnerie architecturale"@fr,
+        "Ferronnerie décorative"@fr,
+        "Ferronneries"@fr,
+        "Ferrures"@fr,
+        "Objets en fer forgé"@fr,
+        "Serrurerie d'art"@fr ;
+    skos:prefLabel "Ferronnerie d'art"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb402927301#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns6:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns5:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb11931683w>,
+        <http://data.bnf.fr/ark:/12148/cb11932931q>,
+        <http://data.bnf.fr/ark:/12148/cb119730183>,
+        <http://data.bnf.fr/ark:/12148/cb11976032c>,
+        <http://data.bnf.fr/ark:/12148/cb12384766f>,
+        <http://data.bnf.fr/ark:/12148/cb12647464b> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb402927301#frbr:Expression> .
+

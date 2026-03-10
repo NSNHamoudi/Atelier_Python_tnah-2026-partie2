@@ -1,0 +1,68 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/vocabulary/relators/> .
+@prefix ns2: <http://rdvocab.info/Elements/> .
+@prefix ns3: <http://data.bnf.fr/vocabulary/roles/> .
+@prefix ns4: <http://data.bnf.fr/ontology/bnf-onto/> .
+@prefix ns5: <http://rdaregistry.info/Elements/m/#> .
+@prefix ns6: <http://rdvocab.info/RDARelationshipsWEMI/> .
+@prefix ns7: <http://rdaregistry.info/Elements/u/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.bnf.fr/ark:/12148/cb40290821v> a skos:Concept ;
+    dcterms:created "1996-03-26" ;
+    dcterms:modified "2013-03-05" ;
+    foaf:focus <http://data.bnf.fr/ark:/12148/cb40290821v#about> .
+
+<http://data.bnf.fr/ark:/12148/cb40290821v#about> a <http://rdaregistry.info/Elements/c/#C10007>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+    ns4:FRBNF 40290821 ;
+    dcterms:date "1902/1927" ;
+    dcterms:description "1 photogr. pos. sur papier albuminé : d'après négatif sur verre au gélatinobromure ; 21,2 x 17,5 cm (épr.)" ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb13162676c>,
+        <http://data.bnf.fr/ark:/12148/cb166670557>,
+        <http://data.bnf.fr/ark:/12148/cb16667087v> ;
+    dcterms:title "Vieille Maison : Place de l'Ecole, 5, [photographie]" ;
+    ns5:P30016 <https://gallica.bnf.fr/ark:/12148/btv1b10516630x> ;
+    ns5:P30139 <http://data.bnf.fr/ark:/12148/cb40290821v#Expression> ;
+    ns5:P30279 "France" ;
+    ns7:P60470 "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns2:note "Technique de l'image : photographie positive. - papier albuminé. - procédé au bromure d'argent. - verre. Note : Date d'après : Szarkowski, John. The Work of Atget. New-York, 1981-1985, t.3" ;
+    ns6:electronicReproduction <https://gallica.bnf.fr/ark:/12148/btv1b10516630x> ;
+    ns6:expressionManifested <http://data.bnf.fr/ark:/12148/cb40290821v#Expression> ;
+    rdfs:seeAlso <https://catalogue.bnf.fr/ark:/12148/cb40290821v> .
+
+<http://data.bnf.fr/ark:/12148/cb13162676c> skos:altLabel "Bâtiments d'habitation"@fr,
+        "Demeures"@fr,
+        "Locaux d'habitation"@fr,
+        "Logements"@fr,
+        "Logis"@fr,
+        "Maisons"@fr,
+        "Maisons d'habitation"@fr,
+        "Résidences"@fr ;
+    skos:prefLabel "Habitations"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb166670557> skos:altLabel "Place de l'École (Paris, France)"@fr,
+        "École, Place de l' (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Place de l'École"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb16667087v> skos:altLabel "Prêtres-Saint-Germain-l'Auxerrois, Rue des (Paris, France)"@fr,
+        "Rue des Prêtres-Saint-Germain-l'Auxerrois (Paris, France)"@fr ;
+    skos:prefLabel "Paris (France) -- Rue des Prêtres-Saint-Germain-l'Auxerrois"@fr .
+
+<http://data.bnf.fr/ark:/12148/cb40290821v#Expression> a <http://rdaregistry.info/Elements/c/#C10006>,
+        <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression> ;
+    ns3:r530 <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    ns1:pht <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:contributor <http://data.bnf.fr/ark:/12148/cb11889340k#about> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-2/fre> ;
+    dcterms:subject <http://data.bnf.fr/ark:/12148/cb13162676c>,
+        <http://data.bnf.fr/ark:/12148/cb166670557>,
+        <http://data.bnf.fr/ark:/12148/cb16667087v> ;
+    dcterms:type dcmitype:StillImage ;
+    owl:sameAs <http://data.bnf.fr/ark:/12148/cb40290821v#frbr:Expression> .
+
